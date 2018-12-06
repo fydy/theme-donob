@@ -9,7 +9,23 @@
   <p class="time">{{ _time(page.created, 'MMMM DD, YYYY') }}</p>
   <h1 class="title">{{ page.title }}</h1>
   <div class="content">{{ page.content }}</div>
-  <div class="comments"><div id="gitting-container"></div></div>
+  <div class="comments">
+  <div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: '页面 ID', // 可选。默认为 location.href
+  owner: 'fydy',
+  repo: 'issue',
+  oauth: {
+    client_id: '8c41b16a70910b0692df',
+    client_secret: '079d61508f7fb7133654221f587d5907edccb394',
+  },
+})
+gitment.render('container')
+</script>
+  </div>
 </div>
 {% endblock %}
 
